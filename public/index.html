@@ -17,27 +17,28 @@
     <!--<script src="../justgage-1.0.1.js"></script>-->
     <script src="justgage.js"></script>
     <script>
-	var aa;
+    var g5;
     document.addEventListener("DOMContentLoaded", function(event) {
+        g5 = new JustGage({
+            id: "g5",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
 
-      var g5;
-	  aa = document.getElementById("pm10").innerHTML;
-
-      var g5 = new JustGage({
-        id: "g5",
-        value: parseInt(aa),
-        min: 0,
-        max: 100,
-        title: "pm10",
-        label: "",
-        startAnimationTime: 2000,
-        startAnimationType: ">",
-        refreshAnimationTime: 1000,
-        refreshAnimationType: "bounce"
-      });
-
-      
-
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod, 1000);
+   function myMethod()
+	{
+		var aa = document.getElementById("pm2").innerHTML;
+		g5.refresh(parseInt(aa));
+	}
     });
     </script>
 <!------------------------------------------------------------------------>
@@ -50,28 +51,30 @@
     <script src="justgage.js"></script>
     <script>
 
-	var aaa;
+	var g6;
     document.addEventListener("DOMContentLoaded", function(event) {
+        g6 = new JustGage({
+            id: "g6",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
 
-      var g6;
-
-	  aaa = document.getElementById("pm2").innerHTML;
-      var g6 = new JustGage({
-        id: "g6",
-        value: parseInt(aaa),
-        min: 0,
-        max: 100,
-        title: "pm2.5",
-        label: "",
-        startAnimationTime: 2000,
-        startAnimationType: ">",
-        refreshAnimationTime: 1000,
-        refreshAnimationType: "bounce"
-      });
-
-      
-
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod, 1000);
+   function myMethod()
+	{
+		var aa = document.getElementById("pm10").innerHTML;
+		g6.refresh(parseInt(aa));
+	}
     });
+    </script>
     </script>
 <!------------------------------------------------------------------------>
 
@@ -82,28 +85,30 @@
     <script src="justgage.js"></script>
     <script>
 
-	var aaaa;
+	var g7;
     document.addEventListener("DOMContentLoaded", function(event) {
+        g7 = new JustGage({
+            id: "g7",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
 
-      var g7;
-
-	  aaaa = document.getElementById("temp").innerHTML;
-      var g7 = new JustGage({
-        id: "g7",
-        value: parseInt(aaaa),
-        min: 0,
-        max: 100,
-        title: "Temperature",
-        label: "",
-        startAnimationTime: 2000,
-        startAnimationType: ">",
-        refreshAnimationTime: 1000,
-        refreshAnimationType: "bounce"
-      });
-
-      
-
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod, 1000);
+   function myMethod()
+	{
+		var aa = document.getElementById("temp").innerHTML;
+		g7.refresh(parseInt(aa));
+	}
     });
+    </script>
     </script>
 <!------------------------------------------------------------------------>
 
