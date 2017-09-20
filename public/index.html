@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>Temperature &amp; Humidity live data</title>
+    <script src="javascripts/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/Chart.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/index.js" type="text/javascript" charset="utf-8"></script>
+    <link href="stylesheets/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="150"></canvas>
+<!------------------------------------------------------------------------>
+
+	<div id="g5"></div>   
+    <script src="raphael-2.1.4.min.js"></script>
+    <!--<script src="../justgage-1.0.1.js"></script>-->
+    <script src="justgage.js"></script>
+    <script>
+	var aa;
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+      var g5;
+	  aa = document.getElementById("pm10").innerHTML;
+
+      var g5 = new JustGage({
+        id: "g5",
+        value: parseInt(aa),
+        min: 0,
+        max: 100,
+        title: "pm10",
+        label: "",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce"
+      });
+
+      
+
+    });
+    </script>
+<!------------------------------------------------------------------------>
+
+
+<!------------------------------------------------------------------------>
+	<div id="g6"></div>   
+    <script src="raphael-2.1.4.min.js"></script>
+    <!--<script src="../justgage-1.0.1.js"></script>-->
+    <script src="justgage.js"></script>
+    <script>
+
+	var aaa;
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+      var g6;
+
+	  aaa = document.getElementById("pm2").innerHTML;
+      var g6 = new JustGage({
+        id: "g6",
+        value: parseInt(aaa),
+        min: 0,
+        max: 100,
+        title: "pm2.5",
+        label: "",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce"
+      });
+
+      
+
+    });
+    </script>
+<!------------------------------------------------------------------------>
+
+<!------------------------------------------------------------------------>
+	<div id="g7"></div>   
+    <script src="raphael-2.1.4.min.js"></script>
+    <!--<script src="../justgage-1.0.1.js"></script>-->
+    <script src="justgage.js"></script>
+    <script>
+
+	var aaaa;
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+      var g7;
+
+	  aaaa = document.getElementById("temp").innerHTML;
+      var g7 = new JustGage({
+        id: "g7",
+        value: parseInt(aaaa),
+        min: 0,
+        max: 100,
+        title: "Temperature",
+        label: "",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce"
+      });
+
+      
+
+    });
+    </script>
+<!------------------------------------------------------------------------>
+
+    <p id="pm2"></p>
+    <p id="pm10"></p>
+	<p id="temp"></p>
+</body>
+
+</html>
