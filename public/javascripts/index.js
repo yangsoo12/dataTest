@@ -204,45 +204,5 @@ if(obj.params.pm10>150){
       console.error(err);
     }
   }
-//-------------------- messaging ----------------------
-var config = {
-  apiKey: "AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y",
-
-};
-firebase.initializeApp(config);
-
-function send_notification(tokens, message)
-	{
-		var url = "https://fcm.googleapis.com/fcm/send";
-		var fields = [tokens, message];
-		var headers = [
-			"Authorization:AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y",
-			"Content-Type: application/json"];
-
-	var ch = curl_init();
-       curl_setopt(ch, CURLOPT_URL, url);
-       curl_setopt(ch, CURLOPT_POST, true);
-       curl_setopt(ch, CURLOPT_HTTPHEADER, headers);
-       curl_setopt(ch, CURLOPT_RETURNTRANSFER, true);
-       curl_setopt (ch, CURLOPT_SSL_VERIFYHOST, 0);  
-       curl_setopt(ch, CURLOPT_SSL_VERIFYPEER, false);
-       curl_setopt(ch, CURLOPT_POSTFIELDS, json_encode(fields));
-       var result = curl_exec(ch);           
-       if (result === FALSE) {
-          console.log("Curl failed: " . curl_error(ch));
-       }
-       curl_close($ch);
-       return result;
-	}
-	var myMessage;	
-	var test = 81;
-	//if(obj.params.pm2>50){
-	if(test>50){
-		myMessage = "실내 미세먼지 : 매우나쁨";
-	}
-	var token2 = "eAZBppd6B1Q:APA91bGp7aML_AY7oRkMdBk0p4RKe9nsweEvYbgYU_5DoL13YX2pajkB92zxAtHvZN42aZi572aawslJxF7r43Flb2tCiFGQBj19qAOn3CtmnWij_mfQk5jpKi7B4YuNF-xdS2wgT7EO";
-	send_notification(token2, myMessage);
-
-//------------------------------------------------------
 	
 });
