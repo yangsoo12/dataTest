@@ -126,22 +126,29 @@ $(document).ready(function () {
 		  pm2Data.shift();
 	  }
 	 if(obj.params.pm2>100){
-  document.getElementById("pm2state").innerHTML = "아주나쁨";
+  document.getElementById("p2g5").innerHTML = "아주나쁨";
 }else if(obj.params.pm2>50){
-  document.getElementById("pm2state").innerHTML = "나쁨";
+  document.getElementById("p2g5").innerHTML = "나쁨";
 }else if(obj.params.pm2>15){
-  document.getElementById("pm2state").innerHTML = "보통";
+  document.getElementById("p2g5").innerHTML = "보통";
 }else if(obj.params.pm2>0){
-  document.getElementById("pm2state").innerHTML = "좋음";
+  document.getElementById("p2g5").innerHTML = "좋음";
 }
 if(obj.params.pm10>150){
-  document.getElementById("pm10state").innerHTML = "아주나쁨";
+  document.getElementById("p10g6").innerHTML = "아주나쁨";
 }else if(obj.params.pm2>80){
-  document.getElementById("pm10state").innerHTML = "나쁨";
+  document.getElementById("p10g6").innerHTML = "나쁨";
 }else if(obj.params.pm2>30){
-  document.getElementById("pm10state").innerHTML = "보통";
+  document.getElementById("p10g6").innerHTML = "보통";
 }else if(obj.params.pm2>0){
-  document.getElementById("pm10state").innerHTML = "좋음";
+  document.getElementById("p10g6").innerHTML = "좋음";
+}
+ if(obj.params.Temperature>30){
+	document.getElementById("tempg7").innerHTML = "높음";
+}else if(obj.params.Temperature>20){
+	document.getElementById("tempg7").innerHTML = "쾌적";
+}else if(obj.params.Temperature>0){
+	document.getElementById("tempg7").innerHTML = "낮음";
 }
       myLineChart.update();
       
