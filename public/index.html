@@ -6,15 +6,51 @@
     <script src="javascripts/Chart.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/index.js" type="text/javascript" charset="utf-8"></script>
     <link href="stylesheets/style.css" rel="stylesheet" />
+<style type="text/css">
+    .centertable {
+        margin: 0px auto;
+    }
+    .centertable p{
+        text-align: center;
+        margin-top: -5px;
+    }
+    .ttitle {
+        text-align: center;
+    }
+
+</style>
+    
 </head>
 
 <body>
     <canvas id="myChart" width="400" height="150"></canvas>
 	
 <!------------------------------------------------------------------------>
-    <div id="g5"></div>
+
+<table class ="centertable" >
+    <tr>
+        <td> 
+            <div class="ttitle">PM2.5(㎍/㎥)</div>
+            <div id="g5"></div>
+            <p id="p2g5">--</p>
+        </td>
+
+        <td> 
+            <div class="ttitle">PM10(㎍/㎥)</div>
+            <div id="g6"></div>
+            <p id="p10g6">--</p>
+        </td>
+
+        <td> 
+            <div class="ttitle">온도(C)</div>
+            <div id="g7"></div> 
+            <p id="tempg7">--</p>
+        </td>
+    </tr>
+</table>
+  <!--  <div id="g5"></div>
 	<p id="p2g5">test</p>
-	
+	-->
     <script src="raphael-2.1.4.min.js"></script>
     <!--<script src="../justgage-1.0.1.js"></script>-->
     <script src="justgage.js"></script>
@@ -48,8 +84,10 @@
 
 
 <!------------------------------------------------------------------------>
-	<div id="g6"></div>
+	<!--
+    <div id="g6"></div>
 	<p id="p10g6"></p>
+-->
     <script src="raphael-2.1.4.min.js"></script>
     <!--<script src="../justgage-1.0.1.js"></script>-->
     <script src="justgage.js"></script>
@@ -83,8 +121,10 @@
 <!------------------------------------------------------------------------>
 
 <!------------------------------------------------------------------------>
-	<div id="g7"></div>	
+	<!--
+    <div id="g7"></div>	
 	<p id="tempg7"></p>
+-->
     <script src="raphael-2.1.4.min.js"></script>
     <!--<script src="../justgage-1.0.1.js"></script>-->
     <script src="justgage.js"></script>
@@ -116,7 +156,7 @@
     </script>
     </script>
 <!------------------------------------------------------------------------>
-    
+    <br><br><br>
     <p id="pm2"></p>
     <p id="pm10"></p>
 	<p id="temp"></p>
