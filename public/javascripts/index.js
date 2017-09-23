@@ -146,9 +146,9 @@ if(obj.params.pm10>150){
       myLineChart.update();
       
  //---------yanji start 2/2------------
-  //20170913 pm Data push    
-      pm10Data.push(obj.params.pm10);
-      pm25Data.push(obj.params.pm2);
+//   //20170913 pm Data push    
+//       pm10Data.push(obj.params.pm10);
+//       pm25Data.push(obj.params.pm2);
     
       //android 20170912 23:29
 //       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
