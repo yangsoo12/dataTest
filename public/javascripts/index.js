@@ -125,30 +125,30 @@ $(document).ready(function () {
 	  {
 		  pm2Data.shift();
 	  }
-	 if(obj.params.pm2>100){
-  document.getElementById("pm2state").innerHTML = "아주나쁨";
-}else if(obj.params.pm2>50){
-  document.getElementById("pm2state").innerHTML = "나쁨";
-}else if(obj.params.pm2>15){
-  document.getElementById("pm2state").innerHTML = "보통";
-}else if(obj.params.pm2>0){
-  document.getElementById("pm2state").innerHTML = "좋음";
-}
-if(obj.params.pm10>150){
-  document.getElementById("pm10state").innerHTML = "아주나쁨";
-}else if(obj.params.pm2>80){
-  document.getElementById("pm10state").innerHTML = "나쁨";
-}else if(obj.params.pm2>30){
-  document.getElementById("pm10state").innerHTML = "보통";
-}else if(obj.params.pm2>0){
-  document.getElementById("pm10state").innerHTML = "좋음";
-}
+// 	 if(obj.params.pm2>100){
+//   document.getElementById("pm2state").innerHTML = "아주나쁨";
+// }else if(obj.params.pm2>50){
+//   document.getElementById("pm2state").innerHTML = "나쁨";
+// }else if(obj.params.pm2>15){
+//   document.getElementById("pm2state").innerHTML = "보통";
+// }else if(obj.params.pm2>0){
+//   document.getElementById("pm2state").innerHTML = "좋음";
+// }
+// if(obj.params.pm10>150){
+//   document.getElementById("pm10state").innerHTML = "아주나쁨";
+// }else if(obj.params.pm2>80){
+//   document.getElementById("pm10state").innerHTML = "나쁨";
+// }else if(obj.params.pm2>30){
+//   document.getElementById("pm10state").innerHTML = "보통";
+// }else if(obj.params.pm2>0){
+//   document.getElementById("pm10state").innerHTML = "좋음";
+// }
       myLineChart.update();
       
  //---------yanji start 2/2------------
-//   //20170913 pm Data push    
-//       pm10Data.push(obj.params.pm10);
-//       pm25Data.push(obj.params.pm2);
+  //20170913 pm Data push    
+      pm10Data.push(obj.params.pm10);
+      pm25Data.push(obj.params.pm2);
     
       //android 20170912 23:29
 //       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
