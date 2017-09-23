@@ -125,6 +125,24 @@ $(document).ready(function () {
 	  {
 		  pm2Data.shift();
 	  }
+	 if(obj.params.pm2>100){
+  document.getElementById("pm2state").innerHTML = "아주나쁨";
+}else if(obj.params.pm2>50){
+  document.getElementById("pm2state").innerHTML = "나쁨";
+}else if(obj.params.pm2>15){
+  document.getElementById("pm2state").innerHTML = "보통";
+}else if(obj.params.pm2>0){
+  document.getElementById("pm2state").innerHTML = "좋음";
+}
+if(obj.params.pm10>150){
+  document.getElementById("pm10state").innerHTML = "아주나쁨";
+}else if(obj.params.pm2>80){
+  document.getElementById("pm10state").innerHTML = "나쁨";
+}else if(obj.params.pm2>30){
+  document.getElementById("pm10state").innerHTML = "보통";
+}else if(obj.params.pm2>0){
+  document.getElementById("pm10state").innerHTML = "좋음";
+}
       myLineChart.update();
       
  //---------yanji start 2/2------------
@@ -159,11 +177,11 @@ $(document).ready(function () {
       //android 20170912 23:29
       function insertDatas(p2,p1,t,h){
          var p2State;
-         if(p2<31){
+         if(p2<16){
            p2State = "좋음";
-         }else if(p2<81){
+         }else if(p2<51){
            p2State = "보통";
-         }else if(p2<151){
+         }else if(p2<101){
            p2State = "나쁨";
          }else{
            p2State = "매우나쁨";
