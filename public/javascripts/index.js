@@ -220,7 +220,7 @@ function send_notification(myMessage)
             type:"POST",
             headers: {"Authorization":"key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y" ,"Content-Type":"application/JSON"},
             body: {"to":"/topics/news", 
-                    "data":{ "message":myMessage,}
+                    "data":{ "message":myMessage }
                   }
 
             })
