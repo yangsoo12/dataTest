@@ -35,43 +35,6 @@
 
 <body>
 
-    <script type="text/javascript">
-        //-------------------- messaging ----------------------
-var config = {
-  apiKey: "AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y",
-
-};
-
-firebase.initializeApp(config);
-
-
-    var token2 = "eAZBppd6B1Q:APA91bGp7aML_AY7oRkMdBk0p4RKe9nsweEvYbgYU_5DoL13YX2pajkB92zxAtHvZN42aZi572aawslJxF7r43Flb2tCiFGQBj19qAOn3CtmnWij_mfQk5jpKi7B4YuNF-xdS2wgT7EO";
-    var myMessage;  
-    var test = 81;
-
-function send_notification(tokens, message)
-    {
-        
-        
-        $.ajax({
-            url:"https://fcm.googleapis.com/fcm/send",
-            type:"POST",
-            headers: {"Authorization":"key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y" ,"Content-Type":" application/x-www-form-urlencoded; charset=UTF-8"},
-            body: {"registration_ids":tokens, "data":JSON.stringify(message)}
-
-            })
-    }
- 
-
-    
-    //if(obj.params.pm2>50){
-    if(test>50){
-    myMessage = "실내 미세먼지 : 매우나쁨";
-    send_notification(token2, myMessage);
-    }
-
-//------------------------------------------------------
-    </script>
     <canvas id="myChart" width="400" height="150"></canvas>
 	
 <!------------------------------------------------------------------------>
