@@ -12,7 +12,6 @@
  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-messaging.js"></script>
 	
- <script src="http://soso525.dothome.co.kr/wangwang.js" type="text/javascript" charset="utf-8"></script>
 <style type="text/css">
    .centertable {
         margin: 0px auto;
@@ -174,6 +173,53 @@
     <p id="pm2"></p>
     <p id="pm10"></p>
 	<p id="temp"></p>
+
+<p id ="ss">111</p>
+<script type="text/javascript">
+$(document).ready(function(){
+
+console.log("teststart");
+  function send_notification(myMessage)
+    {
+
+      console.log("send");
+     $.ajax({
+            type : 'POST',
+            url : "https://fcm.googleapis.com/fcm/send",
+            headers : {
+                Authorization : 'key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y'
+            },
+            contentType : 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({"to": "/topics/news", "notification": {"title":"TestTestTest","body":myMessage}}),
+            success : function(response) {
+                console.log(response);
+
+        console.log("testend1");
+            },
+            error : function(xhr, status, error) {
+                console.log(xhr.error);
+
+        console.log("testend2");
+            }
+        });
+console.log("testend");
+    }
+
+    var ids = document.getElementById("ss").innerHTML;
+        var dd = parseInt(ids);
+        console.log(dd);
+        var myMessage ="미세먼지나빠요";
+        console.log(myMessage);
+        if(dd>50){
+            console.log("if exe");
+
+            send_notification(myMessage);
+        }else{
+            console.log("else");
+        }
+});
+</script>
 </body>
 
 </html>
