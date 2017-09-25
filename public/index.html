@@ -174,7 +174,8 @@
     <p id="pm10"></p>
 	<p id="temp"></p>
 
-<p id ="ss">111</p>
+    <p id="test">104</p>
+
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -206,17 +207,20 @@ console.log("teststart");
 console.log("testend");
     }
 
-    var ids = document.getElementById("ss").innerHTML;
-        var dd = parseInt(ids);
-        console.log(dd);
-        var myMessage ="미세먼지나빠요";
+    var ids = document.getElementById("test").innerHTML;
+        var msgP2 = parseInt(ids);
+        console.log(msgP2);
+        var myMessage ="";
         console.log(myMessage);
-        if(dd>50){
-            console.log("if exe");
-
+        if(msgP2>50){
+            myMessage = "실내 미세먼지 농도 : 나쁨";
             send_notification(myMessage);
-        }else{
-            console.log("else");
+            console.log(myMessage);
+        }else if(msgP2>100){
+
+            myMessage = "실내 미세먼지 농도 : 매우나쁨";
+            send_notification(myMessage);            
+            console.log(myMessage);
         }
 });
 </script>
