@@ -201,37 +201,37 @@ if(obj.params.pm10>150){
 //---------yanji end 2/2------------
 	       //-------------------- messaging ----------------------
 	    
-console.log("teststart");
-  function send_notification()
-    {
+// console.log("teststart");
+//   function send_notification()
+//     {
 
-      console.log("send");
-     $.ajax({
-            type : 'POST',
-            url : "https://fcm.googleapis.com/fcm/send",
-            headers : {
-                Authorization : 'key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y'
-            },
-            contentType : 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({"to": "/topics/news", "notification": {"title":"TestTestTest","body":"Test"}}),
-            success : function(response) {
-                console.log(response);
+//       console.log("send");
+//      $.ajax({
+//             type : 'POST',
+//             url : "https://fcm.googleapis.com/fcm/send",
+//             headers : {
+//                 Authorization : 'key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y'
+//             },
+//             contentType : 'application/json',
+//             dataType: 'json',
+//             data: JSON.stringify({"to": "/topics/news", "notification": {"title":"TestTestTest","body":"Test"}}),
+//             success : function(response) {
+//                 console.log(response);
 
-        console.log("testend1");
-            },
-            error : function(xhr, status, error) {
-                console.log(xhr.error);
+//         console.log("testend1");
+//             },
+//             error : function(xhr, status, error) {
+//                 console.log(xhr.error);
 
-        console.log("testend2");
-            }
-        });
-console.log("testend");
-    }
+//         console.log("testend2");
+//             }
+//         });
+// console.log("testend");
+//     }
 
-      send_notification();
-    console.log("teststart2");
-    //-----------messaging-------------------------
+//       send_notification();
+//     console.log("teststart2");
+//     //-----------messaging-------------------------
       
     } catch (err) {
       console.error(err);
