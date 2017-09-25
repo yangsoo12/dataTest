@@ -200,22 +200,13 @@ if(obj.params.pm10>150){
      
 //---------yanji end 2/2------------
 	       //-------------------- messaging ----------------------
-var config = {
-  apiKey: "AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y",
-
-};
-
-firebase.initializeApp(config);
-
-
-    var token2 = "eAZBppd6B1Q:APA91bGp7aML_AY7oRkMdBk0p4RKe9nsweEvYbgYU_5DoL13YX2pajkB92zxAtHvZN42aZi572aawslJxF7r43Flb2tCiFGQBj19qAOn3CtmnWij_mfQk5jpKi7B4YuNF-xdS2wgT7EO";
-    var myMessage="";  
-// body: {"registration_ids":tokens, "data":JSON.stringify(message)}
-
-function send_notification()
+	    
+console.log("teststart");
+  function send_notification()
     {
-    
-     $.ajax({        
+
+      console.log("send");
+     $.ajax({
             type : 'POST',
             url : "https://fcm.googleapis.com/fcm/send",
             headers : {
@@ -226,24 +217,20 @@ function send_notification()
             data: JSON.stringify({"to": "/topics/news", "notification": {"title":"TestTestTest","body":"Test"}}),
             success : function(response) {
                 console.log(response);
+
+        console.log("testend1");
             },
             error : function(xhr, status, error) {
-                console.log(xhr.error);                   
+                console.log(xhr.error);
+
+        console.log("testend2");
             }
         });
-  
+console.log("testend");
     }
-    if(obj.params.pm2 >50){
 
-        myMessage = "실내 미세먼지 수치가 나쁨 상태입니다. "     
-         send_notification();
-       
-    }else if(obj.params.pm2>100){
-
-        myMessage = "실내 미세먼지 수치가 매우나쁨 상태입니다. "     
-         send_notification();
-       
-    }
+      send_notification();
+    console.log("teststart2");
     //-----------messaging-------------------------
       
     } catch (err) {
