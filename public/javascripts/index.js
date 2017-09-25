@@ -212,29 +212,36 @@ firebase.initializeApp(config);
     var myMessage="";  
 // body: {"registration_ids":tokens, "data":JSON.stringify(message)}
 
-function send_notification(myMessage)
+function send_notification()
     {
-        
-    $.ajax({
-            url:"https://fcm.googleapis.com/fcm/send",
-            type:"POST",
-            headers: {"Authorization":"key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y" ,"Content-Type":"application/JSON"},
-            body: {"to":"/topics/news", 
-                    "data":{ "message":myMessage }
-                  }
-
-            })
+    
+     $.ajax({        
+            type : 'POST',
+            url : "https://fcm.googleapis.com/fcm/send",
+            headers : {
+                Authorization : 'key=AAAAo-ULW8U:APA91bFxJSCqUJRvASWcpBF-7Q2yZApk3KWF0fmC21bJi4Ou9CnTz1fDjXFXHAcBwZc6Iq5JZwyHqFagCWAKybwMYL6Tnyhga_b-LtM2JO_qNcS893Sxv7Jwi55SOhpHz_I_enr4s42Y'
+            },
+            contentType : 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({"to": "/topics/news", "notification": {"title":"TestTestTest","body":"Test"}}),
+            success : function(response) {
+                console.log(response);
+            },
+            error : function(xhr, status, error) {
+                console.log(xhr.error);                   
+            }
+        });
   
     }
     if(obj.params.pm2 >50){
 
         myMessage = "실내 미세먼지 수치가 나쁨 상태입니다. "     
-         send_notification(myMessage);
+         send_notification();
        
     }else if(obj.params.pm2>100){
 
         myMessage = "실내 미세먼지 수치가 매우나쁨 상태입니다. "     
-         send_notification(myMessage);
+         send_notification();
        
     }
     //-----------messaging-------------------------
