@@ -26,7 +26,7 @@
     .ttitle {
         text-align: center;
     }
-    #g5, #g6, #g7 {
+    #g5, #g6, #g7, #g8 {
         margin-top: -10px;
     }
 
@@ -60,7 +60,7 @@
             <p id="tempg7">--</p>
         </td>
         <td> 
-            <div class="ttitle">온도(C)</div>
+            <div class="ttitle">rpm온도(C)</div>
             <div id="g8"></div> 
             <p id="rpm">--</p>
         </td>
@@ -180,7 +180,7 @@
    	<script>
     var g8;
     document.addEventListener("DOMContentLoaded", function(event) {
-        g5 = new JustGage({
+        g8 = new JustGage({
             id: "g8",
             value: 72,
             min: 0,
