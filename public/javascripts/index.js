@@ -17,11 +17,14 @@ $(document).ready(function () {
   var templength = temperatureData.length;
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
+	
+  var rpmData = [];
+  var rpmlength = rpmData.length;
    
-
    document.getElementById("pm2").innerHTML = "20";
    document.getElementById("pm10").innerHTML = "50";
    document.getElementById("temp").innerHTML = "70";
+	
   //---------yanji end 1/2------------
   
   var data = {
@@ -157,7 +160,7 @@ if(obj.params.pm10>150){
   //20170913 pm Data push    
       pm10Data.push(obj.params.pm10);
       pm25Data.push(obj.params.pm2);
-    
+      rpmData.push(obj.params.rpm);
       //android 20170912 23:29
 //       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
            
@@ -171,19 +174,20 @@ if(obj.params.pm10>150){
 //         }
       //20170913
     
-     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)){
+     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)&&(rpmlength<rpmData.length || rpmlength == rpmData.length)){
           pm25length = pm25Data.length;
           pm10length = pm10Data.length;
           humilength = humidityData.length;
           templength = temperatureData.length;
-          
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1]);
+	  rpmlength = rpmData.length;
+	     
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1], rpmData[rpmlength-1]);
                           
           }
      
       
       //android 20170912 23:29
-      function insertDatas(p2,p1,t,h){
+      function insertDatas(p2,p1,t,h,r){
          var p2State;
          if(p2<16){
            p2State = "좋음";
@@ -194,7 +198,7 @@ if(obj.params.pm10>150){
          }else{
            p2State = "매우나쁨";
          }
-         Ao.showResult(p2,p1,t,h,p2State);
+         Ao.showResult(p2,p1,t,h,p2State,r);
       }
       
      
