@@ -103,7 +103,7 @@ $(document).ready(function () {
         return;
       }
 	  
-      document.getElementById("pm2").innerHTML = obj.params.rpm;
+      document.getElementById("pm2").innerHTML = obj.params.pm2;
   	  document.getElementById("pm10").innerHTML = obj.params.pm10;
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
       timeData.push(obj.time);
