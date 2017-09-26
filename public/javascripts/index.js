@@ -25,8 +25,6 @@ $(document).ready(function () {
    document.getElementById("pm10").innerHTML = "50";
    document.getElementById("temp").innerHTML = "70";
 	
-  document.getElementById("rpm").innerHTML = "0";
-	
   //---------yanji end 1/2------------
   
   var data = {
@@ -108,7 +106,6 @@ $(document).ready(function () {
       document.getElementById("pm2").innerHTML = obj.params.pm2;
   	  document.getElementById("pm10").innerHTML = obj.params.pm10;
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
-	  document.getElementById("rpm").innerHTML = obj.params.rpm;
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
