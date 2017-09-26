@@ -26,10 +26,9 @@
     .ttitle {
         text-align: center;
     }
-    #g5, #g6, #g7, #g8 {
+    #g5, #g6, #g7 {
         margin-top: -10px;
     }
-
 </style>
     
 </head>
@@ -59,11 +58,6 @@
             <div id="g7"></div> 
             <p id="tempg7">--</p>
         </td>
-        <td> 
-            <div class="ttitle">rpm온도(C)</div>
-            <div id="g8"></div> 
-            <p id="rpm">--</p>
-        </td>
     </tr>
 </table>
   <!--  <div id="g5"></div>
@@ -85,7 +79,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -110,7 +103,6 @@
     <!--<script src="../justgage-1.0.1.js"></script>-->
     <script src="justgage.js"></script>
     <script>
-
 	var g6;
     document.addEventListener("DOMContentLoaded", function(event) {
         g6 = new JustGage({
@@ -123,7 +115,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -146,7 +137,6 @@
     <!--<script src="../justgage-1.0.1.js"></script>-->
     <script src="justgage.js"></script>
     <script>
-
 	var g7;
     document.addEventListener("DOMContentLoaded", function(event) {
         g7 = new JustGage({
@@ -159,7 +149,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -174,44 +163,13 @@
     </script>
 <!------------------------------------------------------------------------>
 
-	<script src="raphael-2.1.4.min.js"></script>
-    <!--<script src="../justgage-1.0.1.js"></script>-->
-    <script src="justgage.js"></script>
-   	<script>
-    var g8;
-    document.addEventListener("DOMContentLoaded", function(event) {
-        g8 = new JustGage({
-            id: "g8",
-            value: 72,
-            min: 0,
-            max: 1700,
-            donut: true,
-            gaugeWidthScale: 0.3,
-            counter: true,
-            hideInnerShadow: true
-        });
-   //     document.getElementById('g1_refresh').addEventListener('click', function() {
-   //         g1.refresh(getRandomInt(0, 100));
-   //     });
-   setInterval(myMethod5, 1000);
-   function myMethod5( )
-	{
-		var aaa = document.getElementById("rpm").innerHTML;
-		g8.refresh(parseInt(aaa));
-	}
-    });
-    </script>
-<!---------------------------------------------------------------------------------------->
-
 
 <script type="text/javascript">
-
 document.addEventListener("DOMContentLoaded", function(event) {
        
 console.log("teststart");
   function send_notification(myMessage)
     {
-
       console.log("send");
      $.ajax({
             type : 'POST',
@@ -224,12 +182,10 @@ console.log("teststart");
             data: JSON.stringify({"to": "/topics/news", "notification": {"title":"Air-TalkTalk","body":myMessage}}),
             success : function(response) {
                 console.log(response);
-
         console.log("testend1");
             },
             error : function(xhr, status, error) {
                 console.log(xhr.error);
-
         console.log("testend2");
             }
         });
@@ -264,7 +220,6 @@ console.log("testend");
                  		console.log(myMessage);
                  		count = 1;
              		 }else if(count == 30){
-
              		 	myMessage = "실내 미세먼지 농도가 여전히 나쁨 상태입니다.";
                   	send_notification(myMessage);
                  		console.log(myMessage);
@@ -286,7 +241,6 @@ console.log("testend");
     <p id="pm2"></p>
     <p id="pm10"></p>
 	<p id="temp"></p>
-	<p id="rpm"></p>
 </body>
 
 </html>
