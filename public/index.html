@@ -264,6 +264,24 @@ console.log("testend");
 							console.log(myMessage);
 							situation = 3;
 		}
+		if(dd == 35)
+		{
+			myMessage = "집안에서 움직임이 감지되지 않아요! 얼른 확인해보세요!";
+						send_notification(myMessage);
+							console.log(myMessage);
+		}
+		else if(dd == 36)
+		{
+			myMessage = "필터를 교체하셔야 합니다!";
+						send_notification(myMessage);
+							console.log(myMessage);
+		}
+		else if(dd == 37)
+		{
+			myMessage = "외출중이신데 집안에서 움직임이 감지되었어요!";
+						send_notification(myMessage);
+							console.log(myMessage);
+		}
 		
 		if(count != 0){
 			count++;
