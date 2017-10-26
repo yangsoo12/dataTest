@@ -135,7 +135,6 @@ $(document).ready(function () {
 		  temperatureData.push(obj.params.Temperature);
 		  tempimsi = obj.params.Temperature;
 		  humiimsi = obj.params.Humidity;
-		  document.getEle
 		}
 		else
 		{
