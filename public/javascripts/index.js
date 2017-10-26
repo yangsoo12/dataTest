@@ -108,7 +108,6 @@ $(document).ready(function () {
 	  
       document.getElementById("pm2").innerHTML = obj.params.pm2;
   	  document.getElementById("pm10").innerHTML = obj.params.pm10;
-	  document.getElementById("temp").innerHTML = obj.params.Temperature;
 	  document.getElementById("motion").innerHTML = obj.params.motion;
 	  var time = obj.time;
 	  var subS = time.substring(13,19);
