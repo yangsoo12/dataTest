@@ -222,9 +222,31 @@ console.log("testend");
 		console.log("situation");
 		console.log(situation);
 		console.log(dd);
-		if(situation == 0)
+		if(dd == 35 && situation != 1)
 		{
-			if(dd>100){
+			myMessage = "집안에서 움직임이 감지되지 않아요! 얼른 확인해보세요!";
+						send_notification(myMessage);
+							console.log(myMessage);
+							situation = 1;
+							count = 0;
+		}
+		else if(dd == 36 && situation != 2)
+		{
+			myMessage = "필터를 교체하셔야 합니다!";
+						send_notification(myMessage);
+							console.log(myMessage);
+							situation = 2;
+							count = 0;
+		}
+		else if(dd == 37 && situation != 3)
+		{
+			myMessage = "외출중이신데 집안에서 움직임이 감지되었어요!";
+						send_notification(myMessage);
+							console.log(myMessage);
+							situation = 3;
+							count = 0;
+		}
+		else if(dd>100){
 					if(count == 0){
 						myMessage = "실내 미세먼지 농도 : 매우나쁨";
 						send_notification(myMessage);
@@ -253,35 +275,8 @@ console.log("testend");
 					count = 0;
 					console.log(count);
 			 }
-		}else if(situation == 1){
-			myMessage = "집안에서 움직임이 감지되지 않아요! 얼른 확인해보세요!";
-						send_notification(myMessage);
-							console.log(myMessage);
-							situation = 0;
-		}else if(situation == 2){
-			myMessage = "외출중이신데 집안에서 움직임이 감지되었어요!";
-						send_notification(myMessage);
-							console.log(myMessage);
-							situation = 3;
-		}
-		if(dd == 35)
-		{
-			myMessage = "집안에서 움직임이 감지되지 않아요! 얼른 확인해보세요!";
-						send_notification(myMessage);
-							console.log(myMessage);
-		}
-		else if(dd == 36)
-		{
-			myMessage = "필터를 교체하셔야 합니다!";
-						send_notification(myMessage);
-							console.log(myMessage);
-		}
-		else if(dd == 37)
-		{
-			myMessage = "외출중이신데 집안에서 움직임이 감지되었어요!";
-						send_notification(myMessage);
-							console.log(myMessage);
-		}
+		
+		
 		
 		if(count != 0){
 			count++;
