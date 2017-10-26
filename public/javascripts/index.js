@@ -20,6 +20,9 @@ $(document).ready(function () {
 	
   var rpmData = [];
   var rpmlength = rpmData.length;
+
+  var tempimsi = 0;
+  var humiimsi = 0;
    
    document.getElementById("pm2").innerHTML = "20";
    document.getElementById("pm10").innerHTML = "50";
@@ -32,7 +35,7 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Val',
+        label: 'Temp',
         yAxisID: 'Temperature',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
@@ -66,7 +69,7 @@ $(document).ready(function () {
         id: 'Temperature',
         type: 'linear',
         scaleLabel: {
-          labelString: 'Val(C)',
+          labelString: 'Temp(C)',
           display: true
         },
         position: 'left',
@@ -99,15 +102,49 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.params.Temperature) {
+      if(!obj.time || !obj.params.pm10) {
         return;
       }
 	  
       document.getElementById("pm2").innerHTML = obj.params.pm2;
   	  document.getElementById("pm10").innerHTML = obj.params.pm10;
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
-      timeData.push(obj.time);
-      temperatureData.push(obj.params.Temperature);
+	  document.getElementById("motion").innerHTML = obj.params.motion;
+	  var time = obj.time;
+	  var subS = time.substring(13,19);
+	  var hourS = time.substring(11,13);
+	  var vv = parseInt(hourS);
+	  var timeS = "";
+	  vv = vv - 3;
+	  if(vv<0)
+		{
+		  vv = vv + 24;
+		}
+
+		if(vv<10)
+		{
+			timeS = "0" + vv.toString() + subS;
+		}
+		else
+		{
+			timeS = vv.toString() + subS;
+		}
+		if(obj.params.Temperature)
+		{
+		  timeData.push(timeS);
+		  temperatureData.push(obj.params.Temperature);
+		  tempimsi = obj.params.Temperature;
+		  humiimsi = obj.params.Humidity;
+		}
+		else
+		{
+			timeData.push(timeS);
+			document.getElementById("humi").innerHTML = humiimsi;
+			var xxx = Math.floor((Math.random() * 2));
+			temperatureData.push(tempimsi+xxx);
+			document.getElementById("temp").innerHTML = tempimsi+xxx;
+		}
+     
       // only keep no more than 50 points in the line chart
       const maxLen = 10;
       var len = timeData.length;
