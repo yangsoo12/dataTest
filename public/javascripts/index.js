@@ -109,6 +109,7 @@ $(document).ready(function () {
       document.getElementById("pm2").innerHTML = obj.params.pm2;
   	  document.getElementById("pm10").innerHTML = obj.params.pm10;
 	  document.getElementById("motion").innerHTML = obj.params.motion;
+	  document.getElementById("Temp").innerHTML = obj.params.Temperature;
 	  var time = obj.time;
 	  var subS = time.substring(13,19);
 	  var hourS = time.substring(11,13);
@@ -134,6 +135,7 @@ $(document).ready(function () {
 		  temperatureData.push(obj.params.Temperature);
 		  tempimsi = obj.params.Temperature;
 		  humiimsi = obj.params.Humidity;
+		  document.getEle
 		}
 		else
 		{
