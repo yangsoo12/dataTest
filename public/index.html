@@ -183,6 +183,7 @@
 
 
 <script type="text/javascript">
+var situation = 0;
 document.addEventListener("DOMContentLoaded", function(event) {
        
 console.log("teststart");
@@ -211,7 +212,7 @@ console.log("testend");
     }
   
    var count = 0;
-   var situation = 0;
+   
    setInterval(noti, 1000);
    
 	
@@ -246,7 +247,8 @@ console.log("testend");
 							situation = 3;
 							count = 0;
 		}
-		else if(dd>100){
+		else if(dd>100)
+			{
 					if(count == 0){
 						myMessage = "실내 미세먼지 농도 : 매우나쁨";
 						send_notification(myMessage);
@@ -259,7 +261,8 @@ console.log("testend");
 							console.log(myMessage);
 							count = 1;
 				 }
-			 }else if(dd>50){
+			 }else if(dd>50)
+			{
 					if(count == 0){
 						myMessage = "실내 미세먼지 농도 : 나쁨";
 						send_notification(myMessage);
@@ -295,36 +298,36 @@ console.log("testend");
 	}
 	
 
-	if(appcondition == 2 || appcondition == 0)//집에있을떄
-	{
-		mott = document.getElementById("motion").innerHTML;
-		if(mott == 0)
-		{
-			motioncount = motioncount + 1;
-		}
-		else
-		{
-			motioncount = 0;
-		}
-		if(motioncount==10)
-		{
-			situation = 1;
-			//집안 움직임이 감지 안됨. 확인요망
-		}
-	}
-	else if(appcondition == 3)
-	{
-		mott = document.getElementById("motion").innerHTML;
-		if(mott == 1 && situation == 0)
-		{
-			situation = 2;
-			//집에 도둑이 들어온것 같다. 확인해보자..
-		}
-		else if(mott == 0)
-		{
-			situation = 0;
-		}
-	}
+	//if(appcondition == 2 || appcondition == 0)//집에있을떄
+	//{
+	//	mott = document.getElementById("motion").innerHTML;
+	//	if(mott == 0)
+	//	{
+	//		motioncount = motioncount + 1;
+	//	}
+	//	else
+	//	{
+	//		motioncount = 0;
+	//	}
+	//	if(motioncount==10)
+	//	{
+	//		situation = 1;
+	//		//집안 움직임이 감지 안됨. 확인요망
+	//	}
+	//}
+	//else if(appcondition == 3)
+	//{
+	//	mott = document.getElementById("motion").innerHTML;
+	//	if(mott == 1 && situation == 0)
+	//	{
+	//		situation = 2;
+	//		//집에 도둑이 들어온것 같다. 확인해보자..
+	//	}
+	//	else if(mott == 0)
+	//	{
+	//		situation = 0;
+	//	}
+	//}
    </script>
 
     <br><br><br>
