@@ -139,7 +139,6 @@ $(document).ready(function () {
 		else
 		{
 			timeData.push(timeS);
-			document.getElementById("humi").innerHTML = humiimsi;
 			var xxx = Math.floor((Math.random() * 2));
 			temperatureData.push(tempimsi+xxx);
 			document.getElementById("temp").innerHTML = tempimsi+xxx;
